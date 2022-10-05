@@ -1,0 +1,44 @@
+mutilate.cc:1029:  options->connections = args.connections_arg;
+mutilate.cc:1030:  options->blocking = args.blocking_given;
+mutilate.cc:1031:  options->qps = args.qps_arg;
+mutilate.cc:1032:  options->threads = args.threads_arg;
+mutilate.cc:1033:  options->server_given = args.server_given;
+mutilate.cc:1034:  options->roundrobin = args.roundrobin_given;
+mutilate.cc:1036:  int connections = options->connections;
+mutilate.cc:1037:  if (options->roundrobin) {
+mutilate.cc:1038:    connections *= (options->server_given > options->threads ?
+mutilate.cc:1039:                    options->server_given : options->threads);
+mutilate.cc:1041:    connections *= options->server_given * options->threads;
+mutilate.cc:1046:  options->lambda_denom = connections > 1 ? connections : 1;
+mutilate.cc:1047:  if (args.lambda_mul_arg > 1) options->lambda_denom *= args.lambda_mul_arg;
+mutilate.cc:1049:  if (options->threads < 1) options->lambda_denom = 0;
+mutilate.cc:1051:  options->lambda = (double) options->qps / (double) options->lambda_denom * args.lambda_mul_arg;
+mutilate.cc:1053:  //  V("%d %d %d %f", options->qps, options->connections,
+mutilate.cc:1054:  //  connections, options->lambda);
+mutilate.cc:1057:  //    options->records = args.records_arg;
+mutilate.cc:1059:  options->records = args.records_arg / options->server_given;
+mutilate.cc:1061:  options->binary = args.binary_given;
+mutilate.cc:1062:  options->sasl = args.username_given;
+mutilate.cc:1065:    strcpy(options->password, args.password_arg);
+mutilate.cc:1067:    strcpy(options->password, "");
+mutilate.cc:1070:    strcpy(options->username, args.username_arg);
+mutilate.cc:1072:    strcpy(options->username, "");
+mutilate.cc:1074:  D("options->records = %d", options->records);
+mutilate.cc:1076:  if (!options->records) options->records = 1;
+mutilate.cc:1077:  strcpy(options->keysize, args.keysize_arg);
+mutilate.cc:1078:  //  options->keysize = args.keysize_arg;
+mutilate.cc:1079:  strcpy(options->valuesize, args.valuesize_arg);
+mutilate.cc:1080:  //  options->valuesize = args.valuesize_arg;
+mutilate.cc:1081:  options->update = args.update_arg;
+mutilate.cc:1082:  options->time = args.time_arg;
+mutilate.cc:1083:  options->loadonly = args.loadonly_given;
+mutilate.cc:1084:  options->depth = args.depth_arg;
+mutilate.cc:1085:  options->no_nodelay = args.no_nodelay_given;
+mutilate.cc:1086:  options->noload = args.noload_given;
+mutilate.cc:1087:  options->iadist = get_distribution(args.iadist_arg);
+mutilate.cc:1088:  strcpy(options->ia, args.iadist_arg);
+mutilate.cc:1089:  D("options->ia = %s", args.iadist_arg);
+mutilate.cc:1090:  options->warmup = args.warmup_given ? args.warmup_arg : 0;
+mutilate.cc:1091:  options->oob_thread = false;
+mutilate.cc:1092:  options->skip = args.skip_given;
+mutilate.cc:1093:  options->moderate = args.moderate_given;

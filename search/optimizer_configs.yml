@@ -1,0 +1,44 @@
+# These define workload-agnostic settings, such as the tsc frequency,
+# metrics that you measure for the application profiles (subcosts),
+# and their weights.
+global:
+    tsc_freq_mhz: 2000 # Set to your machine tsc frequency
+
+    # Scratch directory which the apps will store the thread id files to communicate
+    # with the datamime harness
+    scratch_dir: /tmp
+
+    # This is the path to the pre-generated datasets and traces you generated
+    # by running the generate_data.sh script within datamime-apps
+    data_root: /path/to/pre-generated/datasets 
+
+    # Path to the datamime apps directory
+    apps_root: ../apps
+
+    # Path to your python3 installation is required for cases where Datamime is
+    # run as sudo.
+    pythonpath: /path/to/python3/installation
+    
+    # Metrics we measure and their weight within the cost model.
+    subcosts:
+        - ci
+        - i1i_mpki
+        - l1d_mpki
+        - l2_mpki
+        - branch_mpki
+        - itlb_mpki
+        - dtlb_mpki
+        - loc_membw
+        - mrc
+        - ipc
+    weights:
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1
+        - 1

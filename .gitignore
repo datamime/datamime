@@ -1,0 +1,29 @@
+# Build and output directories
+profiler/build/
+profiler/lib/
+profiler/output/
+profiler/tools/
+profiler/lltools/build
+
+# Binaries
+datamime-profiler
+bundle-checker
+microbenchmark
+traverse-array
+traverse-array-mt
+tsc-freq
+random-iaxpy
+init-cat-cbm
+list-events
+ptrace-test
+__pycache__/
+local.py
+
+*.png
+*.DS_Store
+*.pyc
+*.swp
+
+# Object files
+*.o
+*.gcno

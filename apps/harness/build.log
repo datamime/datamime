@@ -1,0 +1,6 @@
+g++ -O3 -g -fPIC -std=c++0x -c client.cpp -o client.o
+g++ -O3 -g -fPIC -std=c++0x -c tbench_server_integrated.cpp -o tbench_server_integrated.o
+g++ -O3 -g -fPIC -std=c++0x -c tbench_server_networked.cpp -o tbench_server_networked.o
+g++ -O3 -g -fPIC -std=c++0x -c tbench_client_networked.cpp -o tbench_client_networked.o
+/pathtojdk/bin/javac tbench/tbench.java
+Makefile:27: recipe for target 'tbench/tbench.class' failed

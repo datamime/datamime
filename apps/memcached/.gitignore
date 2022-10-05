@@ -1,0 +1,14 @@
+memcached-1.6.12/Makefile
+memcached-1.6.12/doc/Makefile
+memcached-1.6.12/memcached-debug
+memcached-1.6.12/sizes
+memcached-1.6.12/testapp
+memcached-1.6.12/timedrun
+memcached-1.6.12/autom4te.cache/
+
+
+# Gengetopt otuputs
+cmdline.cc
+cmdline.h
+gtest
+

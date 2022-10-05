@@ -1,0 +1,21 @@
+# For each application: 
+# - provide the relative paths to the binaries for the server and the client 
+# - For apps that use the Tailbench integrated harness, you can provide the path to the
+# single binary for both (see silo, xapian, dnn).
+# - You will need to provide the server/client domains and the client binary paths
+# for apps for which you implement a networked configuration (see memcached implementation)
+memcached:
+    server_binpath: memcached/memcached-1.6.12/memcached
+    client_binpath: memcached/mutilate/mutilate
+    server_domain: foo.bar.com
+    remote_client_domain: foo.bar.com
+    remote_client_binpath: /foo/bar # This needs to be an abs path.
+silo:
+    server_binpath: silo/out-perf.masstree/benchmarks/dbtest_integrated
+    client_binpath: silo/out-perf.masstree/benchmarks/dbtest_integrated
+xapian:
+    server_binpath: xapian/xapian_integrated
+    client_binpath: xapian/xapian_integrated
+dnn:
+    server_binpath: dnn/build/dnn_integrated
+    client_binpath: dnn/build/dnn_integrated
