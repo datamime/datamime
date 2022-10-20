@@ -5,7 +5,7 @@ the behavior of target workloads. Datamime profiles the target workload and
 generates a synthetic *dataset* that, when run by a benchmark program (which
 can be the same or similar to the target workload's), closely mimics the
 behavior of the target workload. Please see the
-[Datamime paper](https://people.csail.mit.edu/sanchez/2022.datamime.micro.pdf)
+[Datamime paper](https://people.csail.mit.edu/hrlee/papers/micro22_datamime.pdf)
 for more details.
 
 Datamime consists of a profiling tool (`profiler/datamime-profiler`) 
